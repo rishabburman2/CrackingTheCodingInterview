@@ -30,9 +30,19 @@ def isUniqueWithExtraMem(s):
     return True
 
 
+# Code with constant space and O(N log N) time
+def sort_string(s):
+    s = ''.join(sorted(s))
+    for i in range(len(s)):
+        if s[i] == s[i - 1]:
+            return False
+
+    return True
+
+
 def main():
-    s = "Rishab235666"
-    ans = isUniqueWithExtraMem(s)
+    s = "Rishab2355"
+    ans = sort_string(s)
     if ans:
         print('All Unique Characters')
     else:
